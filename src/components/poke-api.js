@@ -2,11 +2,13 @@ import axios from "axios";
 
 export const getPokeList = async () =>{
     const List = await axios.get('https://pokeapi.co/api/v2/pokemon')
+    console.log(List)
     return List.data.results
 }
 
 export const getPokeSearch = async (q) =>{
     const Search = await axios.get(`https://pokeapi.co/api/v2/pokemon/${q}`)
+    console.log(Search)
     return Search.data
 }
 

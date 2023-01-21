@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {getPokeList} from './poke-api'
+import {getPokeList} from './poke-api';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Stack } from 'react-bootstrap';
