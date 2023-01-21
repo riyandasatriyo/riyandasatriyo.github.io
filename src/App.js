@@ -24,7 +24,15 @@ function App() {
      setSearchValue(Searchs);
      
    }
+
+  const handleSave = () => {
+    localStorage.setItem(PokemonSearch.name, PokemonSearch)
+   }
   
+   const handleBookmark = () => {
+    localStorage.getItem(PokemonSearch.name)
+   }
+
   useEffect (() => {
     getPokeSearch(SearchValue).then((data) => {
       setPokemonSearch(data)
@@ -48,7 +56,7 @@ function App() {
       setPokemonMove(moves)
     })
   },[SearchValue])
-console.log(PokemonAbility)
+
 
 const PokeSearch = () => {
   return (
@@ -61,9 +69,9 @@ const PokeSearch = () => {
                 <Card.Body>
                   <Card.Title>{PokemonSearch.name}</Card.Title>
                   <Card.Text>
-                   
+                    
                   </Card.Text>
-                  <Button variant="primary">View Detail</Button>
+                  <Button variant="primary" onClick={handleSave}>Save</Button>
                 </Card.Body>
               </Card>
             </Stack>
@@ -94,6 +102,7 @@ const PokeSearch = () => {
               />
             <Button type="submit" variant="primary" onClick={handleClick} >Search</Button>
           </Stack>
+          <button type="button" onClick={handleBookmark}>Bookmark</button>
       </header>
       
         <div className="Container">
